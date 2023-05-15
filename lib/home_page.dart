@@ -27,9 +27,11 @@ class _HomePageState extends State<HomePage> {
           height: double.infinity,
           fit: BoxFit.fill,
         ),
+
         Scaffold(
-          backgroundColor: Colors.transparent,
+          //backgroundColor: Colors.transparent,
           appBar: AppBar(
+            ///title
             title: Text(
               'Islami',
               style: Theme.of(context).textTheme.displaySmall,
@@ -44,6 +46,10 @@ class _HomePageState extends State<HomePage> {
             centerTitle: true,
           ),
 
+          ///body
+          body: bodies[selectedIndex],
+
+          ///BNB wrapped with Theme Widget because we want to change canvas color value in BNB only.
           bottomNavigationBar: Theme(
             data: Theme.of(context).copyWith(
               //canvasColor: MyTheme.lightPrimary,
@@ -52,6 +58,7 @@ class _HomePageState extends State<HomePage> {
             ),
             child: BottomNavigationBar(
               selectedItemColor: Colors.black,
+              unselectedItemColor: Colors.white,
               ///static index = 0
               currentIndex: selectedIndex,
               ///dynamic index...
@@ -62,26 +69,30 @@ class _HomePageState extends State<HomePage> {
 
                 });
               },
-
+              ///items of Bottom navigation Bar.
               items: const [
+                ///icon_radio
                 BottomNavigationBarItem(
                   icon: ImageIcon(
                     AssetImage('assets/images/icon_radio.png'),
                   ),
                   label: 'radio',
                 ),
+                ///icon_sebha
                 BottomNavigationBarItem(
                   icon: ImageIcon(
                     AssetImage('assets/images/icon_sebha.png'),
                   ),
                   label: 'tasbeh',
                 ),
+                ///icon_hadeth
                 BottomNavigationBarItem(
                   icon: ImageIcon(
                     AssetImage('assets/images/icon_hadeth.png'),
                   ),
                   label: 'hadeth',
                 ),
+                ///icon_quran
                 BottomNavigationBarItem(
                   icon: ImageIcon(
                     AssetImage('assets/images/icon_quran.png'),
@@ -91,7 +102,6 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
           ),
-          body: bodies[selectedIndex],
         ),
       ],
     );
