@@ -129,23 +129,27 @@ class QuranHomeBody extends StatelessWidget {
         child: Column(
           children: [
             Image.asset('assets/images/quran_header_img.png'),
+
             Divider(
               //color: Theme.of(context).primaryColor,
               color: MyTheme.lightPrimary,
               thickness: 2,
             ),
-            Text(
+
+            const Text(
               'Sura Name',
               style: TextStyle(
                 fontSize: 25,
                 fontWeight: FontWeight.bold,
               ),
             ),
+
             Divider(
               //color: Theme.of(context).primaryColor,
               color: MyTheme.lightPrimary,
               thickness: 2,
             ),
+            ///list view of asmaa el suwr.
             Expanded(
               child: ListView.separated(
                 separatorBuilder: (context, index)
@@ -160,7 +164,7 @@ class QuranHomeBody extends StatelessWidget {
                 {
                   ///because this need a nullable string.
                   //return Text(suraName[index]);
-                  return SuraNameWidget(suraNameText: suraName[index] ,);
+                  return SuraNameWidget(suraNameText: suraName[index] , index: index,);
                 },
                 itemCount:20,
               ),
