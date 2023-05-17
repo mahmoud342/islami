@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:islami/home_body/quran/sura_name_widget.dart';
+import 'package:islami/home_body/quran/item_sura_name_widget.dart';
 
-import '../my_theme.dart';
+import '../../my_theme.dart';
 
 class QuranHomeBody extends StatelessWidget {
   List<String> suraName = [
@@ -164,7 +164,7 @@ class QuranHomeBody extends StatelessWidget {
                 {
                   ///because this need a nullable string.
                   //return Text(suraName[index]);
-                  return SuraNameWidget(suraNameText: suraName[index] , index: index,);
+                  return ItemSuraNameWidget(suraNameText: suraName[index] , index: index,);
                 },
                 itemCount:20,
               ),

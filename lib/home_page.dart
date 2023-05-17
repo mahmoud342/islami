@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'home_body/hadeth_home_body.dart';
-import 'home_body/quran_home_body.dart';
+import 'home_body/hadeth/hadeth_home_body.dart';
+import 'home_body/quran/quran_home_body.dart';
 import 'home_body/radio_home_body.dart';
 import 'home_body/tasbeh_home_body.dart';
 import 'my_theme.dart';
@@ -71,19 +71,12 @@ class _HomePageState extends State<HomePage> {
               },
               ///items of Bottom navigation Bar.
               items: const [
-                ///icon_radio
+                ///icon_quran
                 BottomNavigationBarItem(
                   icon: ImageIcon(
-                    AssetImage('assets/images/icon_radio.png'),
+                    AssetImage('assets/images/icon_quran.png'),
                   ),
-                  label: 'radio',
-                ),
-                ///icon_sebha
-                BottomNavigationBarItem(
-                  icon: ImageIcon(
-                    AssetImage('assets/images/icon_sebha.png'),
-                  ),
-                  label: 'tasbeh',
+                  label: 'Quran',
                 ),
                 ///icon_hadeth
                 BottomNavigationBarItem(
@@ -92,12 +85,19 @@ class _HomePageState extends State<HomePage> {
                   ),
                   label: 'hadeth',
                 ),
-                ///icon_quran
+                ///icon_sebha
                 BottomNavigationBarItem(
                   icon: ImageIcon(
-                    AssetImage('assets/images/icon_quran.png'),
+                    AssetImage('assets/images/icon_sebha.png'),
                   ),
-                  label: 'Quran',
+                  label: 'tasbeh',
+                ),
+                ///icon_radio
+                BottomNavigationBarItem(
+                  icon: ImageIcon(
+                    AssetImage('assets/images/icon_radio.png'),
+                  ),
+                  label: 'radio',
                 ),
               ],
             ),
@@ -108,10 +108,10 @@ class _HomePageState extends State<HomePage> {
   }
   ///create list of bodies
   List<Widget> bodies = [
-    RadioHomeBody(),
-    TasbehHomeBody() ,
+    QuranHomeBody(),
     HadethHomeBody(),
-    QuranHomeBody() ,
+    TasbehHomeBody() ,
+    RadioHomeBody(),
   ];
 }
 
