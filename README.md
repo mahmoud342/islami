@@ -1,6 +1,6 @@
 # islami
 
-A new Flutter project.
+A new Flutter project(Religious application that consist of four sections -praise, Quran , radio , Quotes-).
 
 ## Getting Started
 
